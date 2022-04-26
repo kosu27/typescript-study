@@ -1,15 +1,10 @@
 import type { NextPage } from "next";
 
-let foo = {} as { bar: number };
-
-foo.bar = 1;
-
-function double(x: number): number | undefined {
-  if (x > 0) {
-    return;
-  }
-  return x * 2;
-}
+const foo: boolean = true;
+const bar: string = "aaa";
+const baz: number = 123;
+const hoge: null = null;
+const war: undefined = undefined;
 
 const Home: NextPage = () => {
   return <div>test</div>;
