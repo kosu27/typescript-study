@@ -11,6 +11,13 @@ tuple[0].toFixed(2);
 //Any型
 const any: any = "何でも代入できる";
 
+//Unknown型
+const unknown: unknown = "何でも代入できる";
+
+if (typeof unknown === "string") {
+  unknown.substr(2);
+}
+
 const Home: NextPage = () => {
   return <div>test</div>;
 };
