@@ -18,6 +18,15 @@ if (typeof unknown === "string") {
   unknown.substr(2);
 }
 
+//Void型
+const foo = (): void => {
+  alert("foo");
+};
+// function foo(): void {
+//   alert("Hello");
+//   return;
+// }
+
 const Home: NextPage = () => {
   return <div>test</div>;
 };
