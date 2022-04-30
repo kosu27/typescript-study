@@ -27,6 +27,11 @@ const foo = (): void => {
 //   return;
 // }
 
+//Never型
+const error = (): never => {
+  throw new Error("エラー");
+};
+
 const Home: NextPage = () => {
   return <div>test</div>;
 };
