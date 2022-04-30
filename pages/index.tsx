@@ -8,6 +8,9 @@ const arr: Array<number> = [1, 2, 3];
 const tuple: [number, string] = [1, "foo"];
 tuple[0].toFixed(2);
 
+//Any型
+const any: any = "何でも代入できる";
+
 const Home: NextPage = () => {
   return <div>test</div>;
 };
