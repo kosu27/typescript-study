@@ -1,17 +1,25 @@
 import type { NextPage } from "next";
 
-//標準ライブラリ
-let obj3: Record<string, unknown> = {
-  a: 1,
-  b: "foo",
+type Foo = {
+  a: number;
+  b: string;
 };
 
-//Index Signature
-let obj4: { a: number; b: string; foo: string } = {
-  a: 1,
-  b: "foo",
-  foo: "bar",
+type Bar = {
+  c: boolean;
 };
+
+type FooBar = Foo & Bar;
+
+const Test: FooBar = {
+  a: 1,
+  b: "",
+  c: true,
+};
+//プリミティブ型として使う方法
+type Boo = string;
+type Baz = number;
+type BooBaz = Boo & Baz;
 
 const Home: NextPage = () => {
   return <div>test</div>;
