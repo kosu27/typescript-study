@@ -1,5 +1,44 @@
 /* eslint-disable @next/next/no-img-element */
-export const TwitterCard = (props: any) => {
+
+type User = {
+  name: string;
+  accountName: string;
+  image: string;
+};
+
+type Body = {
+  text: string;
+  image?: string;
+};
+
+type Analytics = {
+  path: string;
+  count: number;
+}[];
+
+type CommonProps = {
+  user: User;
+  body: Body;
+  analytics: Analytics;
+};
+
+type TweetProps = {
+  type: "tweet";
+};
+
+type RetweetProps = {
+  type: "retweet";
+  retweetedUser: string;
+};
+
+type PromotionProps = {
+  type: "promotion";
+};
+
+type TwitterCardProps = CommonProps &
+  (TweetProps | RetweetProps | PromotionProps);
+
+export const TwitterCard = (props: TwitterCardProps) => {
   return (
     <div className="bg-gray-200 pt-20 pb-80 flex items-center justify-center">
       <div className="bg-white border-gray-200 p-4 rounded-xl border max-w-xl min-w-[480px]">
@@ -31,7 +70,7 @@ export const TwitterCard = (props: any) => {
         {props.body.image ? (
           <img
             className="mt-2 rounded-2xl border border-gray-100"
-            src="{props.body.image}"
+            src={props.body.image}
             alt=""
           />
         ) : null}
