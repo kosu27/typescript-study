@@ -1,17 +1,10 @@
-export const Obj = {
-  foo: "foo",
-  bar: "bar",
-};
+export const color = "red";
 
-// type Obj = typeof Obj;
-// type Key = keyof Obj;
+color = "blue";
 
-type Key = keyof typeof Obj;
+const theme = {
+  color: "red",
+  backgroundColor: "blue",
+} as const;
 
-// const key: Key = "foo";
-
-function test(x: keyof typeof Obj) {
-  return;
-}
-
-test("foo");
+theme.color = "blue";
