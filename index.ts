@@ -1,15 +1,15 @@
 export type User = {
   name: string;
-} & OptionalPersonalData;
+} & RequiredPersonalData;
 
 type PersonalData = {
-  height: number;
-  weight: number;
-  realName: string;
+  height?: number;
+  weight?: number;
+  realName?: string;
 };
 
-type OptionalPersonalData = {
-  [K in keyof PersonalData]?: PersonalData[K];
+type RequiredPersonalData = {
+  [K in keyof PersonalData]-?: PersonalData[K];
   // height?: number;
   // weight?: number;
 };
