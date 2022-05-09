@@ -9,10 +9,11 @@ const isUserB = (user: UserA | UserB): user is UserB => {
   return user.lang === "en";
 };
 
-export const foo = async () => {
-  const res = await fetch("");
-  const json = await res.json();
-  if (isUserA(json)) {
-    return json.lang;
-  }
-};
+const users: (UserA | UserB)[] = [
+  { name: "田中", lang: "ja" },
+  { name: "山田", lang: "ja" },
+  { name: "ジョニー", lang: "en" },
+];
+
+const japanese = users.filter(isUserA);
+const notJapanese = users.filter(isUserB);
