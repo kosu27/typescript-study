@@ -1,6 +1,3 @@
-export function getFirstLetter(str?: string) {
-  if (!str) {
-    return;
-  }
-  return str!.charAt(0);
+export function getFirstLetter(str: number) {
+  return (str as unknown as string).charAt(0);
 }
