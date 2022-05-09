@@ -1,8 +1,6 @@
-export const PATH = {
-  INDEX: "/",
-  LOGIN: "/login",
-  REGISTER: "/register",
-  PROFILE: "/profile",
-} as const;
-
-PATH.INDEX = "/";
+export function getFirstLetter(str?: string) {
+  if (!str) {
+    return;
+  }
+  return str!.charAt(0);
+}
