@@ -1,3 +1,12 @@
-export function getFirstLetter(str: number) {
-  return (str as unknown as string).charAt(0);
-}
+export type User = {
+  name: string;
+  age: number;
+  [key: string]: string | number | undefined;
+};
+
+const user: User = {
+  name: "こす",
+  age: 20,
+  account: "kosu",
+  job: "web developer",
+};
