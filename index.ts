@@ -1,21 +1,9 @@
-export type User = {
-  name: string;
-} & RequiredPersonalData;
-
-type PersonalData = {
-  height?: number;
-  weight?: number;
-  realName?: string;
-};
-
-type RequiredPersonalData = {
-  [K in keyof PersonalData]-?: PersonalData[K];
-  // height?: number;
-  // weight?: number;
-};
-
-const user: User = {
-  name: "こす",
-  height: 170,
-  realName: "こす",
+export const foo = (value: string | number | boolean) => {
+  if (typeof value === "string") {
+    return value;
+  }
+  if (typeof value === "number") {
+    return value;
+  }
+  return value;
 };
