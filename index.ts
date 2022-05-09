@@ -1,9 +1,6 @@
-export const foo = (value: string | number | boolean) => {
-  if (typeof value === "string") {
-    return value;
-  }
-  if (typeof value === "number") {
-    return value;
+export const foo = (value?: string) => {
+  if (!value) {
+    return;
   }
   return value;
 };
