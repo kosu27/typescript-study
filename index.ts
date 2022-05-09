@@ -1,12 +1,14 @@
 export type User = {
   name: string;
-  age: number;
-  [key: string]: string | number | undefined;
+} & PersonalData;
+
+type PersonalData = {
+  //   height: number;
+  //   weight: number;
+  [key in "height" | "weight"]?: number | string;
 };
 
 const user: User = {
   name: "こす",
-  age: 20,
-  account: "kosu",
-  job: "web developer",
+  height: 170,
 };
