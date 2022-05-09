@@ -1,10 +1,8 @@
-export const color = "red";
-
-color = "blue";
-
-const theme = {
-  color: "red",
-  backgroundColor: "blue",
+export const PATH = {
+  INDEX: "/",
+  LOGIN: "/login",
+  REGISTER: "/register",
+  PROFILE: "/profile",
 } as const;
 
-theme.color = "blue";
+PATH.INDEX = "/";
