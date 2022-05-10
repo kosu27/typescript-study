@@ -1,13 +1,12 @@
 type User = {
   name: string;
-  age: number | null;
+  // age: number | null;
   country?: "US" | "KR" | "JP";
 };
 
-type RequiredUser = Required<User>;
+type PickUser = Pick<User, "name" | "country">;
 
-const user: RequiredUser = {
+const user: PickUser = {
   name: "こす",
-  age: 20,
   country: "JP",
 };
