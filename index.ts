@@ -1,12 +1,7 @@
-type Props = {
-  id: string;
-  name: string;
-  age: number;
+const foo = (id: string, age: number) => {
+  return 0;
 };
 
-type Filter<T, U> = {
-  [K in keyof T]: T[K] extends U ? K : never;
-}[keyof T];
+// type Return<T> = T extends (...args: any[]) => infer U ? U : never;
 
-type StringKeys = Filter<Props, string>;
-type NumberKeys = Filter<Props, number>;
+type Foo = ReturnType<typeof foo>;
