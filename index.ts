@@ -1,10 +1,10 @@
-export type Foo<T = string> = {
+export type Foo<T extends string | number> = {
   value: T;
 };
 
-const foo1: Foo = {
+const foo1: Foo<string> = {
   value: "",
 };
 const foo2: Foo<number> = {
-  value: 1,
+  value: 111,
 };
