@@ -4,9 +4,8 @@ type User = {
   country?: "US" | "KR" | "JP";
 };
 
-type ReadonlyUser = Readonly<User>;
+type PartialUser = Partial<User>;
 
-const user: ReadonlyUser = {
+const user: PartialUser = {
   name: "こす",
-  age: 24,
 };
