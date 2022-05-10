@@ -1,12 +1,12 @@
 type User = {
   name: string;
-  // age: number | null;
+  age: number | null;
   country?: "US" | "KR" | "JP";
 };
 
-type PickUser = Pick<User, "name" | "country">;
+type OmitUser = Omit<User, "age">;
 
-const user: PickUser = {
+const user: OmitUser = {
   name: "こす",
   country: "JP",
 };
