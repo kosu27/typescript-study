@@ -4,8 +4,10 @@ type User = {
   country?: "US" | "KR" | "JP";
 };
 
-type PartialUser = Partial<User>;
+type RequiredUser = Required<User>;
 
-const user: PartialUser = {
+const user: RequiredUser = {
   name: "こす",
+  age: 20,
+  country: "JP",
 };
