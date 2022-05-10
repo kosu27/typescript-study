@@ -1,7 +1,12 @@
-const foo = (id: string, age: number) => {
-  return 0;
+type User = {
+  name: string;
+  age: number | null;
+  country?: "US" | "KR" | "JP";
 };
 
-// type Return<T> = T extends (...args: any[]) => infer U ? U : never;
+type ReadonlyUser = Readonly<User>;
 
-type Foo = ReturnType<typeof foo>;
+const user: ReadonlyUser = {
+  name: "こす",
+  age: 24,
+};
