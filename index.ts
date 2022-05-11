@@ -2,20 +2,19 @@ export type User = {
   name: string;
 };
 
-namespace MyNameSpace {
-  export interface User {
+declare namespace MyNameSpace {
+  interface User {
     name: string;
   }
+  type Hoge = string;
 }
+
+x;
 
 // namespace MyNameSpace {
 //   export interface User {
 //     age: number;
 //   }
 // }
-
-declare var x: number;
-
-x = 0;
 
 type Foo = MyNameSpace.User;
