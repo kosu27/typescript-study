@@ -9,7 +9,7 @@ declare namespace MyNameSpace {
   type Hoge = string;
 }
 
-x;
+process.env.FOO;
 
 // namespace MyNameSpace {
 //   export interface User {

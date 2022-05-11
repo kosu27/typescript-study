@@ -1,1 +1,9 @@
-declare var x: number;
+declare global {
+  declare namespace NodeJS {
+    interface ProcessEnv {
+      readonly FOO: string;
+    }
+  }
+}
+
+export {};
