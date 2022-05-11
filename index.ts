@@ -1,16 +1,17 @@
-import { PartialDeep } from "type-fest";
-
-type User = {
+export type User = {
   name: string;
-  age: number | null;
-  address: {
-    country: "US" | "KR" | "JP";
-  };
 };
 
-type PartialUser = PartialDeep<User>;
+namespace MyNameSpace {
+  export interface User {
+    name: string;
+  }
+}
 
-const user: PartialUser = {
-  name: "こす",
-  address: {},
-};
+// namespace MyNameSpace {
+//   export interface User {
+//     age: number;
+//   }
+// }
+
+// type Foo = MyNameSpace.User["age"];
