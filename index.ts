@@ -14,4 +14,8 @@ namespace MyNameSpace {
 //   }
 // }
 
-// type Foo = MyNameSpace.User["age"];
+declare var x: number;
+
+x = 0;
+
+type Foo = MyNameSpace.User;
