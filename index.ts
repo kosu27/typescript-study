@@ -1,18 +1,16 @@
-function foo(a: string, b: number[], c: boolean) {
-  return;
-}
+import { PartialDeep } from "type-fest";
 
-type Foo = Parameters<typeof foo>;
+type User = {
+  name: string;
+  age: number | null;
+  address: {
+    country: "US" | "KR" | "JP";
+  };
+};
 
-// type User = {
-//   name: string;
-//   age: number | null;
-//   country?: "US" | "KR" | "JP";
-// };
+type PartialUser = PartialDeep<User>;
 
-// type OmitUser = Omit<User, "age">;
-
-// const user: OmitUser = {
-//   name: "こす",
-//   country: "JP",
-// };
+const user: PartialUser = {
+  name: "こす",
+  address: {},
+};
