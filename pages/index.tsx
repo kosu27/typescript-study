@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { ChangeEventHandler, useState } from "react";
+import { ChangeEventHandler, useState, VFC } from "react";
 
 type Todo = {
   id: number;
@@ -50,19 +50,30 @@ const Home: NextPage = () => {
       <ul className="mt-4 space-y-2">
         {todos.map((todo) => (
           <li key={todo.id}>
-            <label className="flex items-center gap-x-2">
-              <input
-                type="checkbox"
-                value={todo.id}
-                checked={todo.isDone}
-                onChange={toggle}
-              />
-              <span>{todo.label}</span>
-            </label>
+            <ListItem todo={todo} toggle={toggle} />
           </li>
         ))}
       </ul>
     </div>
+  );
+};
+
+type ListItemProps = {
+  todo: Todo;
+  toggle: ChangeEventHandler<HTMLInputElement>;
+};
+
+const ListItem: VFC<ListItemProps> = ({ todo, toggle }) => {
+  return (
+    <label className="flex items-center gap-x-2">
+      <input
+        type="checkbox"
+        value={todo.id}
+        checked={todo.isDone}
+        onChange={toggle}
+      />
+      <span>{todo.label}</span>
+    </label>
   );
 };
 
