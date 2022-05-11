@@ -1,12 +1,14 @@
-type User = {
-  name: string;
-  age: number | null;
-  country?: "US" | "KR" | "JP";
-};
+type Foo = Extract<"hello" | 0, string | number>;
 
-type OmitUser = Omit<User, "age">;
+// type User = {
+//   name: string;
+//   age: number | null;
+//   country?: "US" | "KR" | "JP";
+// };
 
-const user: OmitUser = {
-  name: "こす",
-  country: "JP",
-};
+// type OmitUser = Omit<User, "age">;
+
+// const user: OmitUser = {
+//   name: "こす",
+//   country: "JP",
+// };
