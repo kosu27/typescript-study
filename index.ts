@@ -1,9 +1,8 @@
-type Foo = Record<"hoge" | "fuga", 1 | 3>;
+function foo(a: string, b: number[], c: boolean) {
+  return;
+}
 
-const obj: Foo = {
-  hoge: 1,
-  fuga: 3,
-};
+type Foo = Parameters<typeof foo>;
 
 // type User = {
 //   name: string;
