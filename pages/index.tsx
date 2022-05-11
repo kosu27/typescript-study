@@ -1,11 +1,17 @@
 import type { NextPage } from "next";
-import { useState } from "react";
+import { ChangeEventHandler, useState } from "react";
+
+type Todo = {
+  id: number;
+  label: string;
+  isDone: boolean;
+};
 
 const Home: NextPage = () => {
   const [text, setText] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
-  const input = (e) => {
+  const input: ChangeEventHandler<HTMLInputElement> = (e) => {
     setText(e.target.value);
   };
 
@@ -16,7 +22,7 @@ const Home: NextPage = () => {
     setText("");
   };
 
-  const toggle = (e) => {
+  const toggle: ChangeEventHandler<HTMLInputElement> = (e) => {
     setTodos((prevTodos) => {
       return prevTodos.map((todo) => {
         if (todo.id === Number(e.target.value)) {
