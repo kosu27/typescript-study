@@ -1,4 +1,4 @@
-type Foo = Extract<"hello" | 0, string | number>;
+type Foo = Exclude<"aaa" | 0 | true, string | number>;
 
 // type User = {
 //   name: string;
