@@ -1,4 +1,4 @@
-type Foo = Exclude<"aaa" | 0 | true, string | number>;
+type Foo = NonNullable<string | null | undefined>;
 
 // type User = {
 //   name: string;
